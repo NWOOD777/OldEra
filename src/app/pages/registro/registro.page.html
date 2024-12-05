@@ -1,13 +1,73 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>registro</ion-title>
+    <!-- Botón de retroceso -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title> Registro </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">registro</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="outer-container">
+    <div class="login-container">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Registrarse</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <form>
+            <ion-item>
+              <ion-input id="email" type="text" fill="solid" label="Correo Electrónico" labelPlacement="floating">
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input id="name" type="text" fill="solid" label="Nombre" labelPlacement="floating">
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input id="apellido" type="text" fill="solid" label="Apellido" labelPlacement="floating">
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input id="rut" type="text" fill="solid" label="RUT" labelPlacement="floating">
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input id="birthdate" type="date" fill="solid" labelPlacement="floating" label="Fecha de Nacimiento">
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-select fill="solid" labelPlacement="floating" label="Género">
+                <ion-select-option>Masculino</ion-select-option>
+                <ion-select-option>Femenino</ion-select-option>
+                <ion-select-option>Otro</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-input id="password" type="password" fill="solid" label="Contraseña" labelPlacement="floating">
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input id="confirmpassword" type="password" fill="solid" label="Ingrese su contraseña nuevamente"
+                labelPlacement="floating">
+              </ion-input>
+            </ion-item>
+
+            <ion-button expand="full">Registrarse</ion-button>
+            <br>
+            <p style="text-align:center;">¿Ya tienes cuenta?<a routerLink="/login"> Iniciar sesión</a></p>
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>
