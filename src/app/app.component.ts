@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+
+  home() {
+    console.log('Home');
+  }
+
+  perfil() {
+    console.log('Perfil');
+  }
 }

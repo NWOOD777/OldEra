@@ -1,3 +1,21 @@
-<ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app>
+ <ion-app>
+      <ion-menu contentId="menu">
+      <ion-content>
+        <ion-list>
+          <ion-item lines="full" (click)="perfil()">
+            Login
+            <ion-icon slot="end" name="person" color="dark"></ion-icon> <!-- Ícono alineado a la derecha -->
+          </ion-item>
+        </ion-list>
+        <ion-list>
+          <ion-item lines="full" (click)="home()">
+            Registro
+            <ion-icon slot="end" name="person" color="dark"></ion-icon> <!-- Ícono alineado a la derecha -->
+          </ion-item>
+        </ion-list>
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="menu"></ion-router-outlet>
+  </ion-app>
+
