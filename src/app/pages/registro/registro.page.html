@@ -1,14 +1,14 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar style="--background: #ff9800; transition: background-color 0.3s ease-in-out;">
     <!-- Botón de retroceso -->
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home"></ion-back-button>
+      <ion-back-button defaultHref="/home" style="color: #424141;"></ion-back-button>
     </ion-buttons>
-    <ion-title> Registro </ion-title>
+    <ion-title style="color: #424141;">Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="dark-background">
   <div class="outer-container">
     <div class="login-container">
       <ion-card>
@@ -17,54 +17,55 @@
         </ion-card-header>
 
         <ion-card-content>
-          <form>
+          <form (submit)="register()">
             <ion-item>
-              <ion-input id="email" type="text" fill="solid" label="Correo Electrónico" labelPlacement="floating">
-              </ion-input>
+              <ion-label position="floating">Correo Electrónico</ion-label>
+              <ion-input [(ngModel)]="email" name="email" type="email" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-input id="name" type="text" fill="solid" label="Nombre" labelPlacement="floating">
-              </ion-input>
+              <ion-label position="floating">Nombre</ion-label>
+              <ion-input [(ngModel)]="nombre" name="nombre" type="text" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-input id="apellido" type="text" fill="solid" label="Apellido" labelPlacement="floating">
-              </ion-input>
+              <ion-label position="floating">Apellido</ion-label>
+              <ion-input [(ngModel)]="apellido" name="apellido" type="text" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-input id="rut" type="text" fill="solid" label="RUT" labelPlacement="floating">
-              </ion-input>
+              <ion-label position="floating">RUT</ion-label>
+              <ion-input [(ngModel)]="rut" name="rut" type="text" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-input id="birthdate" type="date" fill="solid" labelPlacement="floating" label="Fecha de Nacimiento">
-              </ion-input>
+              <ion-label position="floating">Fecha de Nacimiento</ion-label>
+              <br>
+              <ion-input [(ngModel)]="fechaNacimiento" name="fechaNacimiento" type="date" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-select fill="solid" labelPlacement="floating" label="Género">
-                <ion-select-option>Masculino</ion-select-option>
-                <ion-select-option>Femenino</ion-select-option>
-                <ion-select-option>Otro</ion-select-option>
+              <ion-label position="floating">Género</ion-label>
+              <ion-select [(ngModel)]="genero" name="genero" required>
+                <ion-select-option value="masculino">Masculino</ion-select-option>
+                <ion-select-option value="femenino">Femenino</ion-select-option>
+                <ion-select-option value="otro">Otro</ion-select-option>
               </ion-select>
             </ion-item>
 
             <ion-item>
-              <ion-input id="password" type="password" fill="solid" label="Contraseña" labelPlacement="floating">
-              </ion-input>
+              <ion-label position="floating">Contraseña</ion-label>
+              <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
             </ion-item>
 
             <ion-item>
-              <ion-input id="confirmpassword" type="password" fill="solid" label="Ingrese su contraseña nuevamente"
-                labelPlacement="floating">
-              </ion-input>
+              <ion-label position="floating">Confirmar Contraseña</ion-label>
+              <ion-input [(ngModel)]="confirmPassword" name="confirmPassword" type="password" required></ion-input>
             </ion-item>
 
-            <ion-button expand="full">Registrarse</ion-button>
+            <ion-button expand="full" type="submit" style="--background: #ff9800; transition: background-color 0.3s ease-in-out;">Registrarse</ion-button>
             <br>
-            <p style="text-align:center;">¿Ya tienes cuenta?<a routerLink="/login"> Iniciar sesión</a></p>
+            <p style="text-align:center;">¿Ya tienes cuenta? <a routerLink="/login">Iniciar sesión</a></p>
           </form>
         </ion-card-content>
       </ion-card>

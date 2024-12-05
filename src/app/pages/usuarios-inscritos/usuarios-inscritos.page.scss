@@ -1,0 +1,26 @@
+.dark-background {
+    --background: #121212; /* Fondo oscuro */
+  }
+  
+  .ion-padding {
+    padding: 16px;
+  }
+  
+  .text-orange {
+    color: #ff9800; /* Naranja */
+  }
+  
+  ion-card {
+    margin-bottom: 20px;
+    --background: #1e1e1e; /* Fondo ligeramente más claro */
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  ion-card-title {
+    color: #ff9800; /* Naranja */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  ion-card-content p {
+    color: #ffffff; /* Texto blanco */
+  }

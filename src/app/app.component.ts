@@ -19,4 +19,14 @@ export class AppComponent {
     this.menu.close();
     this.router.navigate(['/login']);
   }
+
+  taller() {
+    this.menu.close();
+    this.router.navigate(['/taller']);
+  }
+
+  logout() {
+    localStorage.removeItem('currentUser');
+    this.router.navigate(['/login']);
+  }
 }

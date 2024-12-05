@@ -1,0 +1,57 @@
+.dark-background {
+  --background: #121212; /* Fondo oscuro */
+}
+
+.outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #121212; /* Fondo oscuro */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+ion-card {
+  width: 100%;
+  --background: #1e1e1e; /* Fondo ligeramente más claro */
+  transition: background-color 0.3s ease-in-out;
+}
+
+ion-card-title {
+  color: #ff9800; /* Naranja */
+  transition: color 0.3s ease-in-out;
+}
+
+ion-item {
+  --background: #1e1e1e; /* Fondo ligeramente más claro */
+  transition: background-color 0.3s ease-in-out;
+}
+
+ion-label {
+  color: #ffffff; /* Texto blanco */
+}
+
+ion-input {
+  color: #ffffff; /* Texto blanco */
+}
+
+ion-button {
+  --background: #ff9800; /* Naranja */
+  --color: #ffffff; /* Texto blanco */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+a {
+  color: #2196f3; /* Azul */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #4caf50; /* Verde */
+}

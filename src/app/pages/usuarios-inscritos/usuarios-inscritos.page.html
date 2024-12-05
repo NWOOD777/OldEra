@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="--background: #ff9800; transition: background-color 0.3s ease-in-out;">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/taller" style="color: #424141;"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color: #424141;">Usuarios Inscritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="dark-background">
+  <ion-grid class="ion-padding">
+    <!-- Title -->
+    <ion-row>
+      <ion-col>
+        <h1 class="ion-text-center text-orange">Lista de Usuarios Inscritos en {{ tallerNombre }}</h1>
+      </ion-col>
+    </ion-row>
+
+    <!-- Users List -->
+    <ion-row>
+      <ion-col size-md="6" size-sm="12" *ngFor="let usuario of usuarios">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ usuario.nombre }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Email:</strong> {{ usuario.email }}</p>
+            <p><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
