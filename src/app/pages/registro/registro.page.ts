@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registro',
@@ -16,11 +17,11 @@ export class RegistroPage implements OnInit {
   password: string = '';
   confirmPassword: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private alertController: AlertController) {}
 
   ngOnInit() {}
 
-  register() {
+  async register() {
     if (this.email.trim() && this.password.trim() && this.password === this.confirmPassword) {
       const newUser = {
         email: this.email,
@@ -34,10 +35,20 @@ export class RegistroPage implements OnInit {
 
       // Guardar el usuario en localStorage
       localStorage.setItem('user', JSON.stringify(newUser));
-      alert('Registro exitoso. Ahora puedes iniciar sesión.');
+      const alert = await this.alertController.create({
+        header: ' Inicio de sesión',
+        message: 'Porfavor, ingrese su correo electrónico y contraseña.',
+        buttons: ['OK']
+      });
+      await alert.present();
       this.router.navigate(['/login']);
     } else {
-      alert('Por favor, completa todos los campos y asegúrate de que las contraseñas coincidan.');
+      const alert = await this.alertController.create({
+        header: 'Inscripción',
+        message: 'Te has inscrito exitosamente en el taller.',
+        buttons: ['OK']
+      });
+      await alert.present();
     }
   }
 }

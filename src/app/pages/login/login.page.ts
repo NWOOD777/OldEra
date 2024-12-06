@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';	
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginPage implements OnInit {
   password: string = '';
   isRecurrentUser: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private alertController: AlertController ) {}
 
   ngOnInit() {
     // Verificar si el usuario es recurrente
@@ -19,7 +20,7 @@ export class LoginPage implements OnInit {
     this.isRecurrentUser = !!user;
   }
 
-  login() {
+  async login() {
     if (this.email.trim() && this.password.trim()) {
       const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
 
@@ -34,10 +35,20 @@ export class LoginPage implements OnInit {
 
         this.router.navigate(['/home']);
       } else {
-        alert('Correo electrónico o contraseña incorrectos.');
+        const alert = await this.alertController.create({
+          header: ' Inicio de sesión',
+          message: 'Correo electrónico o contraseña incorrectos.',
+          buttons: ['OK']
+        });
+        await alert.present();
       }
     } else {
-      alert('Por favor, ingresa tu correo electrónico y contraseña.');
+      const alert = await this.alertController.create({
+        header: ' Inicio de sesión',
+        message: 'Porfavor, ingrese su correo electrónico y contraseña.',
+        buttons: ['OK']
+      });
+      await alert.present();
     }
   }
 }
